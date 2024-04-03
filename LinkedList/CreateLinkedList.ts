@@ -1,4 +1,5 @@
 import { DefaultNode, PrintLinkList } from "./DefaultNode";
+
 const CreateLinkedList =(inputArray:string[]) => {
   const dummyHead = new DefaultNode(null);
   let currentNode = dummyHead;

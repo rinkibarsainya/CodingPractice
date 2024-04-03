@@ -7,7 +7,6 @@ var NestingScore = function (s) {
         else if (char === ']') {
             // pop element
             var popped = stack.pop();
-            var score = 0;
             if (popped == 0) {
                 stack[stack.length - 1] += 1;
             }

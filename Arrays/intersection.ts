@@ -1,6 +1,7 @@
 const intersection = (a:number[], b:number[]) => {
   const result = [];
   const setA = new Set(a);
+  console.log('SetA', setA)
   for(let item of b){
    if(setA.has(item)) result.push(item);
   }

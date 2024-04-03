@@ -1,5 +1,6 @@
 const NestingScore = (s: string )=>{
     const stack =[0];
+    console.log('stack', stack)
     for(let char of s){
         if(char === '[') stack.push(0);
         else if( char === ']'){

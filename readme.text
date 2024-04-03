@@ -1,3 +1,6 @@
+// Run this command : tsc arrays/anagram.ts (Note): use cmd terminal instead pwershall
+// node arrays/anagram.js
+
 // to fix this error :  error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
 
 Link : https://stackoverflow.com/questions/60243293/how-to-fix-cannot-find-name-set

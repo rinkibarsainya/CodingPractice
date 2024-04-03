@@ -1,6 +1,7 @@
 var intersection = function (a, b) {
     var result = [];
     var setA = new Set(a);
+    console.log('SetA', setA);
     for (var _i = 0, b_1 = b; _i < b_1.length; _i++) {
         var item = b_1[_i];
         if (setA.has(item))
