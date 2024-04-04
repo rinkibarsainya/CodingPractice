@@ -258,9 +258,111 @@ function compress(inputStr: string){
     return compressStr;
 }
 
-console.log('compress ccaaatsss =>', compress('ccaaatsss'))
-console.log('compress ssssbbz =>', compress('ssssbbz'))
-console.log('compress ppoppppp =>', compress('ppoppppp'))
-console.log('compress nnneeeeeeeeeeeezz =>', compress('nnneeeeeeeeeeeezz'))
-console.log('compress yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy =>', compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'))
+// console.log('compress ccaaatsss =>', compress('ccaaatsss'))
+// console.log('compress ssssbbz =>', compress('ssssbbz'))
+// console.log('compress ppoppppp =>', compress('ppoppppp'))
+// console.log('compress nnneeeeeeeeeeeezz =>', compress('nnneeeeeeeeeeeezz'))
+// console.log('compress yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy =>', compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'))
+
+//Problem 12: mostFrequentChar('bookeeper'); // -> 'e'
+// {b:1 , o:2, k:1, e:3, p:1, r:1}
+
+function mostFrequentChar(str: string){
+    const charMap ={}
+    let maxChar = '';
+    let max = 0;
+    for(let char of str){
+      if(char in charMap)
+      {
+        charMap[char] += 1;
+      }else{
+        charMap[char] = 1;
+      }  
+    }
+
+    for(let key in charMap){
+       if(charMap[key] > max){
+           max = charMap[key];
+           maxChar = key;
+       }
+    }
+
+    return maxChar;
+
+}
+
+// console.log('mostFrequentChar', mostFrequentChar('bookeeper'));
+// console.log('mostFrequentChar david', mostFrequentChar('david'));
+// console.log('mostFrequentChar abby', mostFrequentChar('abby'));
+// console.log('mostFrequentChar mississippi', mostFrequentChar('mississippi'));
+// console.log('mostFrequentChar david', mostFrequentChar('david'));
+// console.log('mostFrequentChar eleventennine', mostFrequentChar('eleventennine'));
+// console.log('mostFrequentChar potato', mostFrequentChar('potato'));
+// console.log('mostFrequentChar riverbed', mostFrequentChar('riverbed'));
+
+//Problem: 13 intersection([4,2,1,6], [3,6,9,2,10]) // -> [2,6]
+
+function Intersection(array1: number[], array2:number[]){
+    let result = [];
+    for(let num of array1){
+        if(array2.includes(num)){
+            result.push(num)
+        }
+    }
+    return result;
+}
+
+// console.log('intersection', Intersection([4,2,1,6], [3,6,9,2,10]))
+// console.log('intersection', Intersection([2,4,6], [4,2]) )
+// console.log('intersection', Intersection([4,2,1], [1,2,4,6]))
+// console.log('intersection', Intersection([0,1,2], [10,11]))
+
+//Problem: 14 uncompress("2c3a1t"); // -> 'ccaaat'
+
+function uncompress(str: string){
+    let uncompressStr = ''
+    let multiplier = ''
+    for(let char of str){
+        if(!isNaN(Number(char))){ // char is number
+            multiplier +=  char;
+        }else{
+            let num = parseInt(multiplier); 
+            uncompressStr += char.repeat(num) // repeat char 
+            multiplier ='';
+        }
+    }
+    return uncompressStr;
+}
+
+// console.log('uncompress 2c3a1t', uncompress("2c3a1t"))
+// console.log('uncompress 3n12e2z', uncompress("3n12e2z"))
+// console.log('uncompress 3n12e2z', uncompress("3n12e2z"))
+// console.log('uncompress 4s2b', uncompress("4s2b"))
+// console.log('uncompress 2p1o5p', uncompress("2p1o5p"))
+// console.log('uncompress 127y', uncompress("127y"))
+
+//Problem:14 decompressBraces("2{q}3{tu}v"); 
+
+function decompressBraces(str: string){
+    let stack =[];
+    for(let char of str){
+        if(!isNaN(Number(char)))
+        {
+            stack.push(Number(char));
+        }else if(char === '}'){
+           let newChar = '';
+           while(typeof stack[stack.length-1] !== 'number'){
+            const poppedChar = stack.pop();
+            newChar += poppedChar;
+           }
+           const num = stack.pop()
+           stack.push(newChar.repeat(num))
+        }else if(char !== '{'){
+             stack.push(char)
+        }
+    }
+    return stack.join('');
+}
+
+console.log('decompressBraces("2{q}3{tu}v")', decompressBraces("2{q}3{tu}v"))
 

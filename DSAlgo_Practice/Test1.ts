@@ -15,6 +15,9 @@ function BefittingBrackets1(str : string){
 //DecompressBraces('2{q}3{tu}v') => output- qqtututuv
 
 function DecompressBraces1(str: string){
-    const stack = [];
+    
+    // for(let char of str){
+    //   if(!isNaN(Number(char)))
+    // }
     return ''
 }
