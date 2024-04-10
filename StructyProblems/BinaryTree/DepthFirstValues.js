@@ -17,7 +17,9 @@ var DepthFirstValues = function (root) {
     var result = [];
     while (stack.length > 0) {
         var current = stack.pop();
-        result.push(current.val);
+        if (typeof current.val === "string") {
+            result.push(current.val);
+        }
         if (current.right)
             stack.push(current.right);
         if (current.left)
@@ -28,8 +30,8 @@ var DepthFirstValues = function (root) {
 var DepthFirstValuesUsingRecursion = function (root) {
     if (root === null)
         return [];
-    var leftValues = DepthFirstValuesUsingRecursion(root.left);
-    var rightValues = DepthFirstValuesUsingRecursion(root.right);
+    var leftValues = DepthFirstValuesUsingRecursion(root.left); //b, d, e
+    var rightValues = DepthFirstValuesUsingRecursion(root.right); //c, f
     return __spreadArray(__spreadArray([root.val], leftValues, true), rightValues, true);
 };
 console.log(DepthFirstValues(BinaryTreeNode_1.a));
