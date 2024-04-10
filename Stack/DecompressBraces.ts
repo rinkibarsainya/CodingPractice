@@ -6,7 +6,7 @@ const DecompressBraces =(s: string) => {
         if(numbers.includes(char)){
             stack.push(Number(char));
         }else if(char === '}'){
-            let segment ='';
+            let segment = '';
             while(typeof stack[stack.length-1] !== 'number'){
                 const poppedElement = stack.pop();
                 segment = poppedElement + segment;
