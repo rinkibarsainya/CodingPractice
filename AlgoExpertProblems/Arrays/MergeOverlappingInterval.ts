@@ -14,10 +14,15 @@ export function mergeOverlappingIntervals(array: number[][]) {
       const [nextIntervalStart, nextIntervalEnd] = nextInterval
   
       if(currentIntervalEnd >= nextIntervalStart){
+        console.log('if true', currentInterval)
         currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd)
+        console.log('Merge array',mergedInterval )
       }else{
+        console.log('if false', currentInterval, nextInterval)
         currentInterval = nextInterval
+        console.log('mergeInterval before ', mergedInterval)
         mergedInterval.push(currentInterval)
+        console.log('mergedInterval after', mergedInterval)
       }
     }
     

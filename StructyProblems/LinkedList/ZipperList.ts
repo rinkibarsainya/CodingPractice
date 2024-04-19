@@ -1,4 +1,4 @@
-import {DefaultNode} from "./DefaultNode";
+import {DefaultNode, PrintLinkList} from "./DefaultNode";
 
 const a = new DefaultNode('a');
 const b = new DefaultNode('b');
@@ -35,5 +35,6 @@ const ZipperList = (head1:DefaultNode, head2:DefaultNode)=> {
 
    return head1;
 }
-
-console.log('Zipper List --->', ZipperList(a, x));
+const head = ZipperList(a,x)
+PrintLinkList(head);
+//console.log('Zipper List --->', ZipperList(a, x));

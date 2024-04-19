@@ -35,4 +35,6 @@ var ZipperList = function (head1, head2) {
         tail.next = current2;
     return head1;
 };
-console.log('Zipper List --->', ZipperList(a, x));
+var head = ZipperList(a, x);
+(0, DefaultNode_1.PrintLinkList)(head);
+//console.log('Zipper List --->', ZipperList(a, x));
