@@ -28,7 +28,8 @@ interface MinMaxItems {
       // Write your code here.
       let newMinMaxNumber = { min: number, max : number}
       console.log('this',this, this.minMaxStack)
-      if(this.minMaxStack?.length){
+      
+      if(this.minMaxStack.length){
         const lastMinMax = this.minMaxStack[this.minMaxStack.length -1]
         newMinMaxNumber.min = Math.min(lastMinMax.min, number)
         newMinMaxNumber.max = Math.max(lastMinMax.max, number)
@@ -48,4 +49,5 @@ interface MinMaxItems {
     }
   }
   const stack = new MinMaxStack()
-  stack.push(5)
+  console.log('stack', stack)
+  //stack.push(5)

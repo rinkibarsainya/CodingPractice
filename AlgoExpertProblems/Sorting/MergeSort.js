@@ -65,7 +65,7 @@ function mergeSortHelper(mainArray, startIdx, endIdx, auxiliaryArray) {
     doMerge(mainArray, startIdx, midIdx, endIdx, auxiliaryArray);
 }
 function doMerge(mainArray, startIdx, midIdx, endIdx, auxiliaryArray) {
-    console.log('doMerge', mainArray, auxiliaryArray, startIdx, endIdx);
+    console.log('doMerge', mainArray, auxiliaryArray, startIdx, endIdx, midIdx);
     var k = startIdx; // for auxiliary array
     var i = startIdx;
     var j = midIdx + 1;

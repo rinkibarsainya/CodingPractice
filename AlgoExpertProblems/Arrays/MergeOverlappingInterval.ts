@@ -25,7 +25,9 @@ export function mergeOverlappingIntervals(array: number[][]) {
         console.log('mergedInterval after', mergedInterval)
       }
     }
-    
+    console.log('sortedIntervals', sortedIntervals)
+    console.log('mergedInterval', mergedInterval)
+    console.log('array', array)
     return mergedInterval;
   }
   console.log('Merge Overlapping Interval', mergeOverlappingIntervals([[1,2],[3,5], [4,7], [6,8],[9,10]]))

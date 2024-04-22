@@ -67,11 +67,11 @@ export function mergeSort(array: number[]) : number[]{
   }
 
   function doMerge(mainArray: number[], startIdx: number, midIdx:number, endIdx: number, auxiliaryArray: number[]){
-    console.log('doMerge', mainArray, auxiliaryArray, startIdx, endIdx)
+    console.log('doMerge', mainArray, auxiliaryArray, startIdx, endIdx, midIdx)
     let k = startIdx // for auxiliary array
     let i = startIdx
     let j = midIdx + 1
-
+  
     while ( i <= midIdx && j <= endIdx){
         if(auxiliaryArray[i] <= auxiliaryArray[j]){
             mainArray[k++] = auxiliaryArray[i++]

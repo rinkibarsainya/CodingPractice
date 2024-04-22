@@ -18,10 +18,11 @@ var MinMaxStack = /** @class */ (function () {
         return this.stack.pop();
     };
     MinMaxStack.prototype.push = function (number) {
+        var _a;
         // Write your code here.
         var newMinMaxNumber = { min: number, max: number };
         console.log('this', this, this.minMaxStack);
-        if (this.minMaxStack.length) {
+        if ((_a = this.minMaxStack) === null || _a === void 0 ? void 0 : _a.length) {
             var lastMinMax = this.minMaxStack[this.minMaxStack.length - 1];
             newMinMaxNumber.min = Math.min(lastMinMax.min, number);
             newMinMaxNumber.max = Math.max(lastMinMax.max, number);
@@ -40,5 +41,6 @@ var MinMaxStack = /** @class */ (function () {
     return MinMaxStack;
 }());
 exports.MinMaxStack = MinMaxStack;
-var obj = new MinMaxStack();
-obj.push(5);
+var stack = new MinMaxStack();
+console.log('stack', stack, this);
+//stack.push(5)

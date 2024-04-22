@@ -27,6 +27,9 @@ function mergeOverlappingIntervals(array) {
             console.log('mergedInterval after', mergedInterval);
         }
     }
+    console.log('sortedIntervals', sortedIntervals);
+    console.log('mergedInterval', mergedInterval);
+    console.log('array', array);
     return mergedInterval;
 }
 exports.mergeOverlappingIntervals = mergeOverlappingIntervals;
