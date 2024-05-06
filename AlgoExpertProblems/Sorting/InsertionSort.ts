@@ -15,3 +15,4 @@ export function insertionSort(array: number[]) {
     
   }
   
+  insertionSort([8,5,2,9,5,6,3])
